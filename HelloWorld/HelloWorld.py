@@ -4,10 +4,12 @@ import math
 def computeEntropy(cluster_labels, topics):
     number_of_clusters = max(cluster_labels)
     number_of_docs = len(topics)
+    count = 0
     entropy = [0]*number_of_clusters
     cluster_size = [0]*number_of_clusters
     for i in range(0,len(cluster_labels)):
         if cluster_labels[i] !=  -1:
+            count += 1;
             cluster_size[cluster_labels[i]-1] += 1
     print 'number of clusters : ',number_of_clusters
     print 'cluster sizes : ', cluster_size
@@ -30,13 +32,15 @@ def computeEntropy(cluster_labels, topics):
 
     total_entropy = 0;
     for i in range(0,number_of_clusters):
+        print 'entropy of cluster ',i,' is ',entropy[i]
         total_entropy += entropy[i]*cluster_size[i]
 
-    return total_entropy/number_of_docs
+    print 'number of documents : ',count
+    return total_entropy/count
 
 ##main starts here
 topics_count = {}
 topics_count['Hello'] = 'World';
 print topics_count
-m = computeEntropy([1,2,1,2],['hello','hello','world','world'])
+m = computeEntropy([1,2,1,2,1],['hello','hello','world','world','yo'])
 print 'entropy is ', m

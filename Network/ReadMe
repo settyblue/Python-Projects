@@ -1,0 +1,34 @@
+List of Files submitted:
+========================
+1. /data/  #Folder that contains all the data.
+2. /facebook_data/ #Folder that contains facebook graph data.
+3. NetworkAnalyzer.py  #File to be run.
+
+
+Steps the run the program:
+==========================
+1. Run the following from terminal.
+        python NetworkAnalyzer.py
+
+
+Steps to read output:
+=====================
+1. The following is the format of the output.
+    Dataset name : <input data file name>
+    Number of Edges = <#>
+    Number of Nodes = <#>
+
+    [Correlation Matrix of different Graph characteristics]
+    [Label of computed graph characteristics]
+    ---------------------------
+
+2. The Output folder is created.
+    This folder contains all the output files.
+    Each output file corresponds to a dataset.
+    Each output file contains the values of a given characteristic at all the nodes.
+    The output format is a List of List.
+    The row index is same order as the Labels printed in the terminal.
+
+3. The Graphml Folder is created.
+    This folder contains all the graphml files.
+    Each Data Graph created is exported as a .graphml file for further analysis.

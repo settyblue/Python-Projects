@@ -14,10 +14,15 @@ def main():
     #        linestyle='none', marker='o', color='black', mfc='none')
     #fig.suptitle('Simple Scatterplot Matrix')
     #plt.show()
-    output_filename = 'p2p-Gnutella08.txt_out'
+    #'p2p-Gnutella08.txt_out'
+    #'Wiki-Vote.txt_out'
+    #'CA-GrQc.txt_out'
+    #'facebook_combined.txt_out'
+    output_filename = 'facebook_combined.txt_out'
     graph_characterstics = json.load(open(output_filename))
     graph_characteristics_matrix = np.array(graph_characterstics)
-    fig = scatterplot_matrix(graph_characteristics_matrix, ['clustering \ncoefficient','closeness \ncentrality','pagerank \ncentrality','betweenness \ncentrality','eigen \nvector ','degree \ncentrality'],
+    #fig = scatterplot_matrix(graph_characteristics_matrix, ['clustering \ncoefficient','closeness \ncentrality','pagerank \ncentrality','betweenness \ncentrality','in degree \ncentrality','eigen \nvector ','out degree \ncentrality'],
+    fig = scatterplot_matrix(graph_characteristics_matrix, ['clustering \ncoefficient','closeness \ncentrality','pagerank \ncentrality','betweenness \ncentrality','in degree \ncentrality','out degree \ncentrality'],
             linestyle='none', marker='o', color='black', mfc='none')
     fig.suptitle('Simple Scatterplot Matrix : '+output_filename)
     plt.show()
